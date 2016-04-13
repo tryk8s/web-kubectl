@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-kubectl-svc
+  labels:
+    app: web-kubectl
+spec:
+  ports:
+  - port: 57575
+    protocol: TCP
+    nodePort: 30575
+  selector:
+    app: web-kubectl
+  type: NodePort

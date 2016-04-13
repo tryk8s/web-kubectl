@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: web-kubectl
+  labels:
+    app: web-kubectl
+spec:
+  replicas: 1
+  selector:
+    app: web-kubectl
+  template:
+    metadata:
+      labels:
+        app: web-kubectl
+    spec:
+      containers:
+      - name: web-kubectl
+        image: tryk8s/web-kubectl
+        env:
+        - name: PASSWORD
+          value: tryk8s
+        ports:
+        - containerPort: 57575
+          name: web-kubectl
+          protocol: TCP
