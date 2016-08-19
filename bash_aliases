@@ -1,0 +1,2 @@
+export KUBERNETES_SERVICE_HOST="kubernetes"
+export KUBERNETES_SERVICE_PORT="443"
